@@ -1,0 +1,17 @@
+<mat-card>
+  <form (ngSubmit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input type="text" matInput ngModel name="title" placeholder="Title" required minlength="5" #title="ngModel">
+      <mat-error *ngIf="title.invalid">{{"Please enter a title more than 5 characters long"}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput id="" rows="6" ngModel name="content" placeholder="Add Message" required
+                minlength="150" #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">{{"Please enter content more than 150 characters long"}}</mat-error>
+
+    </mat-form-field>
+    <button mat-raised-button color="primary"
+            type="submit">Save Post
+    </button>
+  </form>
+</mat-card>
